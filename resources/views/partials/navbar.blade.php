@@ -5,7 +5,7 @@
                 <div>
                     <!-- Website Logo -->
                     <a href="#" class="flex items-center py-4 px-2">
-                        <img width=50 height=50 src="{{ asset('img/tcm-logo.png') }}">
+                        <img width=50 height=50 src="{{ secure_asset('img/tcm-logo.png') }}">
                         <span class="font-semibold text-gray-500 text-lg">Tennis Club Montigny-en-Gohelle</span>
                     </a>
                 </div>

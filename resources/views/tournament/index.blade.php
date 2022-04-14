@@ -40,7 +40,7 @@
     <!--Img Col-->
     <div class="w-full lg:w-2/5">
         <!-- Big profile image for side bar (desktop) -->
-        <img src="{{ asset('img/affiche_tcm.jpg') }}" width="636" height="954" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
+        <img src="{{ secure_asset('img/affiche_tcm.jpg') }}" width="636" height="954" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
         <!-- Image from: http://unsplash.com/photos/MP0IUfwrn0A -->
 
     </div>
@@ -76,7 +76,7 @@
         <div class="flex justify-center items-center ">
             <div class="p-1 w-full md:w-1/2">
                 <div class="bg-white rounded-lg shadow-lg">
-                  <img src="{{ asset('img/terrain.jpg') }}" alt="" class="rounded-t-lg">
+                  <img src="{{ secure_asset('img/terrain.jpg') }}" alt="" class="rounded-t-lg">
                   <div class="p-6 flex-1">
                         <div class="mx-auto my-2 max-w-md rounded overflow-hidden shadow-md text-xs">
   
@@ -92,7 +92,7 @@
                           
                             <div class="flex px-2 py-2 items-center">
                               <div class="w-7/12 flex">
-                                <img class="w-6 sm:w-10 mr-2 self-center" alt="away-logo" src="{{ asset('img/tcm-logo.png') }}">
+                                <img class="w-6 sm:w-10 mr-2 self-center" alt="away-logo" src="{{ secure_asset('img/tcm-logo.png') }}">
                                 <div class="flex flex-col">
                                   <?php 
                                     $pm = App\Models\PlayerMatch::where('id_matches',$matchesNow[0]->id)->get();
@@ -131,7 +131,7 @@
                             </div>
                             <div class="flex px-2 py-2 items-center">
                               <div class="w-7/12 flex">
-                                <img class="w-6 sm:w-10 mr-2 self-center" alt="home-logo" src="{{ asset('img/tcm-logo.png') }}">
+                                <img class="w-6 sm:w-10 mr-2 self-center" alt="home-logo" src="{{ secure_asset('img/tcm-logo.png') }}">
                                 <div class="flex flex-col">
                                   <?php 
                                   $p2 = $pm->first();
@@ -179,7 +179,7 @@
       <div class="box col-start-2 col-span-2">
           <div class="flex justify-center items-center  bg-blue-lightest">
               <div id="app" class="bg-white w-128 h-60 rounded shadow-md flex card text-grey-darkest">
-                  <img class="w-1/2 h-full rounded-l-sm" src="{{ asset('img/terrain.jpg') }}" alt="Room Image">
+                  <img class="w-1/2 h-full rounded-l-sm" src="{{ secure_asset('img/terrain.jpg') }}" alt="Room Image">
                   <div class="w-full flex flex-col">
                       <div class="p-4 pb-0 flex-1">
                           <div class="flex items-center justify-between">
@@ -198,7 +198,7 @@
                             
                               <div class="flex px-2 py-2 items-center">
                                 <div class="w-7/12 flex">
-                                  <img class="w-6 sm:w-10 mr-2 self-center" alt="away-logo" src="{{ asset('img/tcm-logo.png') }}">
+                                  <img class="w-6 sm:w-10 mr-2 self-center" alt="away-logo" src="{{ secure_asset('img/tcm-logo.png') }}">
                                   <div class="flex flex-col">
                                     <?php 
                                       $pm = App\Models\PlayerMatch::where('id_matches',$matchesNow[1]->id)->get();
@@ -238,7 +238,7 @@
                             
                               <div class="flex px-2 py-2 items-center">
                                 <div class="w-7/12 flex">
-                                  <img class="w-6 sm:w-10 mr-2 self-center" alt="home-logo" src="{{ asset('img/tcm-logo.png') }}">
+                                  <img class="w-6 sm:w-10 mr-2 self-center" alt="home-logo" src="{{ secure_asset('img/tcm-logo.png') }}">
                                   <div class="flex flex-col">
                                     <?php 
                                     $p2 = $pm->first();
@@ -286,7 +286,7 @@
       <div class="box col-start-2 col-span-2">
           <div class="flex justify-center items-center  bg-blue-lightest">
               <div id="app" class="bg-white w-128 h-60 rounded shadow-md flex card text-grey-darkest">
-                  <img class="w-1/2 h-full rounded-l-sm" src="{{ asset('img/terrain.jpg') }}" alt="Room Image">
+                  <img class="w-1/2 h-full rounded-l-sm" src="{{ secure_asset('img/terrain.jpg') }}" alt="Room Image">
                   <div class="w-full flex flex-col">
                       <div class="p-4 pb-0 flex-1">
                           <div class="flex items-center justify-between">
@@ -305,7 +305,7 @@
                             
                               <div class="flex px-2 py-2 items-center">
                                 <div class="w-7/12 flex">
-                                  <img class="w-6 sm:w-10 mr-2 self-center" alt="away-logo" src="{{ asset('img/tcm-logo.png') }}">
+                                  <img class="w-6 sm:w-10 mr-2 self-center" alt="away-logo" src="{{ secure_asset('img/tcm-logo.png') }}">
                                   <div class="flex flex-col">
                                     <?php 
                                       $pm = App\Models\PlayerMatch::where('id_matches',$matchesNow[2]->id)->get();
@@ -345,7 +345,7 @@
                             
                               <div class="flex px-2 py-2 items-center">
                                 <div class="w-7/12 flex">
-                                  <img class="w-6 sm:w-10 mr-2 self-center" alt="home-logo" src="{{ asset('img/tcm-logo.png') }}">
+                                  <img class="w-6 sm:w-10 mr-2 self-center" alt="home-logo" src="{{ secure_asset('img/tcm-logo.png') }}">
                                   <div class="flex flex-col">
                                     <?php 
                                     $p2 = $pm->first();
@@ -429,7 +429,7 @@
                       
                         <div class="flex px-2 py-2 items-center">
                           <div class="w-7/12 flex">
-                            <img class="w-6 sm:w-10 mr-2 self-center" alt="away-logo" src="{{ asset('img/tcm-logo.png') }}">
+                            <img class="w-6 sm:w-10 mr-2 self-center" alt="away-logo" src="{{ secure_asset('img/tcm-logo.png') }}">
                             <div class="flex flex-col">
                               <?php 
                                 $pm = App\Models\PlayerMatch::where('id_matches',$match->id)->get();
@@ -470,7 +470,7 @@
                       
                         <div class="flex px-2 py-2 items-center">
                           <div class="w-7/12 flex">
-                            <img class="w-6 sm:w-10 mr-2 self-center" alt="home-logo" src="{{ asset('img/tcm-logo.png') }}">
+                            <img class="w-6 sm:w-10 mr-2 self-center" alt="home-logo" src="{{ secure_asset('img/tcm-logo.png') }}">
                             <div class="flex flex-col">
                               <?php 
                                 $p2 = $pm->first();
