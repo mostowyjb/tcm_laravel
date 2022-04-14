@@ -16,6 +16,7 @@
     <div class="mx-0 sm:mx-6">
 
         <div class="bg-white w-full p-8 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal" style="font-family:Georgia,serif;">
+            <br/><br/>
             Vous êtes joueur ou juste curieux? <br/><br/>
             Le tennis club de Montigny en Gohelle vous ouvre ses portes pour vous faire partager la vie divertissante du club à travers la joie et la bonne humeur de ses licenciés. Vous serez informé des infos du club, des journées spéciales, des résultats des interclubs et des tournois, ect...
             <br/><br/>
