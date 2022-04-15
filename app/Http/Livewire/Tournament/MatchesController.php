@@ -76,6 +76,8 @@ class MatchesController extends Component
                 "id_matches" =>$match->id,
                 "id_player1" =>$this->f_player1,
                 "id_player2" =>$this->f_player2,
+                "id_player1bis" =>$this->f_player1bis,
+                "id_player2bis" =>$this->f_player2bis,
                 "is_double" =>$this->is_double,
             ]);
         }
