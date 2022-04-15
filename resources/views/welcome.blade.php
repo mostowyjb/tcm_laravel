@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/> <!--Replace with your tailwind.css once created-->
+<!--Replace with your tailwind.css once created-->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
 <div class="text-center pt-16 md:pt-32">
     <h1 class="font-bold break-normal text-3xl md:text-5xl">Bienvenue sur TCM</h1>

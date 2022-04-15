@@ -17,12 +17,12 @@
 
     <body class="bg-gray-800 font-sans leading-normal tracking-normal">
         @include('partials.navbar')  
-        <main>
+        <main class=" mx-auto">
         <div class="flex flex-col md:flex-row">
-            <nav aria-label="alternative nav">
-                <div class="bg-gray-800 shadow-xl h-20 fixed bottom-0 md:relative z-10 w-full md:w-48 content-center">
+            <nav aria-label="alternative nav md:left-0 text-center">
+                <div class="bg-gray-800 h-20 fixed bottom-0 md:relative z-10 w-full md:w-48 content-center">
 
-                    <div class="md:w-48 md:fixed md:left-0 content-center md:content-start text-left justify-between">
+                    <div class="md:w-48 md:fixed content-center md:content-start text-left justify-between">
                         <ul class="list-reset flex flex-row md:flex-col pt-3 md:py-3 px-1 md:px-2 text-center md:text-left">
                             <li class="mr-3 flex-1">
                                 <a href="{{ route('match') }}" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-[#FBE302] {{ Request::is('dashboard/match') ? 'text-[#FBE302] border-[#FBE302] ' : '' }}">
