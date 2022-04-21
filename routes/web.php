@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::middleware('visitor')->group(function ($router) {
+    
+    $router->get('/about', [Controllers\HomeController::class, 'show'])->name('about');
+
     Route::group(['prefix' => 'tournoi'], function () use ($router) {
         $router->get('/', [Controllers\Tournament\TournamentController::class, 'show'])->name('tournoi');
         $router->get('/prog', \App\Http\Livewire\Programmation::class)->name('tournoi.prog');

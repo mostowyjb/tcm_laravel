@@ -10,6 +10,7 @@
     <!-- JOUEUR 1 --> 
     <div class="w-full md:w-1/2 xl:w-1/3 p-6">
       <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto">
+        <div class="font-bold text-xl mb-2">Joueur 1</div>
         <div class="form-group mb-6">
           <select id="player1" name="player1" class="select2 form-control block 
             w-full
@@ -146,11 +147,153 @@
           </label>
         </div>
       </div>
+      @if($is_double)
+      <!-- JOUEUR 1 BIS --> 
+        <div class="block mt-4 p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto">
+          <div class="font-bold text-xl mb-2">Partenaire Joueur 1</div>
+          <div class="form-group mb-6">
+            <select id="player1bis" name="player1bis" class="select2 form-control block 
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" wire:model.debounce.300ms="f_player1bis">
+              @if(!empty($this->player1bis))
+                <option value="{{$this->player1bis->id}}">{{$this->player1bis->firstname}} {{$this->player1bis->lastname}}</option>
+                @foreach(\App\Models\Player::where("id","!=",$this->player1bis->id)->orderBy('lastname')->get() as $p)
+                  <option value="{{$p ->id}}">{{$p->firstname}} {{$p->lastname}}</option>
+                @endforeach
+              @else
+                <option value="" ></option>
+                @foreach(\App\Models\Player::orderBy('lastname')->get() as $p)
+                  <option value="{{$p ->id}}">{{$p->firstname}} {{$p->lastname}}</option>
+                @endforeach
+              @endif
+            </select>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="form-group mb-6">
+              <label type="text" class="form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="lastname" name="lastname"
+              >
+
+                @if(!empty($this->player1bis))
+                  {{$this->player1bis->lastname}}
+                @else
+                  Nom
+                @endif
+              
+              </label>
+            </div>
+
+            <div class="form-group mb-6">
+              <label type="text" class="form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="firstname" name="firstname"
+              >
+
+                @if(!empty($this->player1bis))
+                  {{$this->player1bis->firstname}}
+                @else
+                  Prénom
+                @endif
+              
+              </label>
+            </div>
+          </div>
+          <div class="form-group mb-6">
+            <label type="text" class="form-control
+              block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="club" name="club"
+            >
+
+              @if(!empty($this->player1bis))
+                {{$this->player1bis->club}}
+              @else
+                Club
+              @endif
+            
+            </label>
+          </div>
+          <div class="form-group mb-6">
+            <label type="text" class="form-control
+              block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="classement" name="classement"
+            >
+
+              @if(!empty($this->player1bis))
+                {{$this->player1bis->classement}}
+              @else
+                Classement
+              @endif
+            
+            </label>
+          </div>
+        </div>
+      @endif
     </div>
-    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+    <div class=" self-center w-full md:w-1/2 xl:w-1/3 p-6">
       <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto">
         <div class="form-group mb-6">
-            <select class="px-3
+            <select class="w-full
+              px-3
               py-1.5
               text-base
               font-normal
@@ -198,6 +341,7 @@
     <!-- JOUEUR 2 --> 
     <div class="w-full md:w-1/2 xl:w-1/3 p-6">
       <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto">
+        <div class="font-bold text-xl mb-2">Joueur 2</div>
         <div class="form-group mb-6">
           <select id="player2" name="player2" class="select2 form-control block 
             w-full
@@ -333,44 +477,16 @@
           
           </label>
         </div>
+
+        
       </div>
-    </div>
-    @if($is_double)
-    <!-- JOUEUR 1 BIS --> 
-    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-      <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto">
-        <div class="form-group mb-6">
-          <select id="player1bis" name="player1bis" class="select2 form-control block 
-            w-full
-            px-3
-            py-1.5
-            text-base
-            font-normal
-            text-gray-700
-            bg-white bg-clip-padding
-            border border-solid border-gray-300
-            rounded
-            transition
-            ease-in-out
-            m-0
-            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" wire:model.debounce.300ms="f_player1bis">
-            @if(!empty($this->player1bis))
-              <option value="{{$this->player1bis->id}}">{{$this->player1bis->firstname}} {{$this->player1bis->lastname}}</option>
-              @foreach(\App\Models\Player::where("id","!=",$this->player1bis->id)->orderBy('lastname')->get() as $p)
-                <option value="{{$p ->id}}">{{$p->firstname}} {{$p->lastname}}</option>
-              @endforeach
-            @else
-              <option value="" ></option>
-              @foreach(\App\Models\Player::orderBy('lastname')->get() as $p)
-                <option value="{{$p ->id}}">{{$p->firstname}} {{$p->lastname}}</option>
-              @endforeach
-            @endif
-          </select>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
+
+      @if($is_double)
+      <!-- JOUEUR 2 BIS --> 
+        <div class="block mt-4 p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto">
+          <div class="font-bold text-xl mb-2">Partenaire Joueur 2</div>
           <div class="form-group mb-6">
-            <label type="text" class="form-control
-              block
+            <select id="player2bis" name="player2bis" class="select2 form-control block 
               w-full
               px-3
               py-1.5
@@ -383,147 +499,75 @@
               transition
               ease-in-out
               m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="lastname" name="lastname"
-            >
-
-              @if(!empty($this->player1bis))
-                {{$this->player1bis->lastname}}
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" wire:model.debounce.300ms="f_player2bis">
+              @if(!empty($this->player2bis))
+                <option value="{{$this->player2bis->id}}">{{$this->player2bis->firstname}} {{$this->player2bis->lastname}}</option>
+                @foreach(\App\Models\Player::where("id","!=",$this->player2bis->id)->orderBy('lastname')->get() as $p)
+                  <option value="{{$p ->id}}">{{$p->firstname}} {{$p->lastname}}</option>
+                @endforeach
               @else
-                Nom
+                <option value="" ></option>
+                @foreach(\App\Models\Player::orderBy('lastname')->get() as $p)
+                  <option value="{{$p ->id}}">{{$p->firstname}} {{$p->lastname}}</option>
+                @endforeach
               @endif
-            
-            </label>
+            </select>
           </div>
-
-          <div class="form-group mb-6">
-            <label type="text" class="form-control
-              block
-              w-full
-              px-3
-              py-1.5
-              text-base
-              font-normal
-              text-gray-700
-              bg-white bg-clip-padding
-              border border-solid border-gray-300
-              rounded
-              transition
-              ease-in-out
-              m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="firstname" name="firstname"
-            >
-
-              @if(!empty($this->player1bis))
-                {{$this->player1bis->firstname}}
-              @else
-                Prénom
-              @endif
-            
-            </label>
-          </div>
-        </div>
-        <div class="form-group mb-6">
-          <label type="text" class="form-control
-            block
-            w-full
-            px-3
-            py-1.5
-            text-base
-            font-normal
-            text-gray-700
-            bg-white bg-clip-padding
-            border border-solid border-gray-300
-            rounded
-            transition
-            ease-in-out
-            m-0
-            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="club" name="club"
-          >
-
-            @if(!empty($this->player1bis))
-              {{$this->player1bis->club}}
-            @else
-              Club
-            @endif
-          
-          </label>
-        </div>
-        <div class="form-group mb-6">
-          <label type="text" class="form-control
-            block
-            w-full
-            px-3
-            py-1.5
-            text-base
-            font-normal
-            text-gray-700
-            bg-white bg-clip-padding
-            border border-solid border-gray-300
-            rounded
-            transition
-            ease-in-out
-            m-0
-            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="classement" name="classement"
-          >
-
-            @if(!empty($this->player1bis))
-              {{$this->player1bis->classement}}
-            @else
-              Classement
-            @endif
-          
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-      <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto">
-        <div class="form-group mb-6">
-
-        </div>
-        <div class="form-group mb-6 mx-auto">
-          <i class="em em-crossed_swords" aria-role="presentation" aria-label=""  style="width: 100%; height:6rem;"></i>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="form-group mb-6">
+              <label type="text" class="form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="lastname" name="lastname"
+              >
     
-        </div>
-        <div class="form-group mb-6">
-
-        </div>
-      </div>
-    </div>
-    <!-- JOUEUR 2 BIS --> 
-    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-      <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto">
-        <div class="form-group mb-6">
-          <select id="player2bis" name="player2bis" class="select2 form-control block 
-            w-full
-            px-3
-            py-1.5
-            text-base
-            font-normal
-            text-gray-700
-            bg-white bg-clip-padding
-            border border-solid border-gray-300
-            rounded
-            transition
-            ease-in-out
-            m-0
-            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" wire:model.debounce.300ms="f_player2bis">
-            @if(!empty($this->player2bis))
-              <option value="{{$this->player2bis->id}}">{{$this->player2bis->firstname}} {{$this->player2bis->lastname}}</option>
-              @foreach(\App\Models\Player::where("id","!=",$this->player2bis->id)->orderBy('lastname')->get() as $p)
-                <option value="{{$p ->id}}">{{$p->firstname}} {{$p->lastname}}</option>
-              @endforeach
-            @else
-              <option value="" ></option>
-              @foreach(\App\Models\Player::orderBy('lastname')->get() as $p)
-                <option value="{{$p ->id}}">{{$p->firstname}} {{$p->lastname}}</option>
-              @endforeach
-            @endif
-          </select>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
+                @if(!empty($this->player2bis))
+                  {{$this->player2bis->lastname}}
+                @else
+                  Nom
+                @endif
+              
+              </label>
+            </div>
+    
+            <div class="form-group mb-6">
+              <label type="text" class="form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="firstname" name="firstname"
+              >
+    
+                @if(!empty($this->player2bis))
+                  {{$this->player2bis->firstname}}
+                @else
+                  Prénom
+                @endif
+              
+              </label>
+            </div>
+          </div>
           <div class="form-group mb-6">
             <label type="text" class="form-control
               block
@@ -539,18 +583,17 @@
               transition
               ease-in-out
               m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="lastname" name="lastname"
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="club" name="club"
             >
-
+    
               @if(!empty($this->player2bis))
-                {{$this->player2bis->lastname}}
+                {{$this->player2bis->club}}
               @else
-                Nom
+                Club
               @endif
             
             </label>
           </div>
-
           <div class="form-group mb-6">
             <label type="text" class="form-control
               block
@@ -566,73 +609,21 @@
               transition
               ease-in-out
               m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="firstname" name="firstname"
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="classement" name="classement"
             >
-
+    
               @if(!empty($this->player2bis))
-                {{$this->player2bis->firstname}}
+                {{$this->player2bis->classement}}
               @else
-                Prénom
+                Classement
               @endif
             
             </label>
           </div>
         </div>
-        <div class="form-group mb-6">
-          <label type="text" class="form-control
-            block
-            w-full
-            px-3
-            py-1.5
-            text-base
-            font-normal
-            text-gray-700
-            bg-white bg-clip-padding
-            border border-solid border-gray-300
-            rounded
-            transition
-            ease-in-out
-            m-0
-            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="club" name="club"
-          >
-
-            @if(!empty($this->player2bis))
-              {{$this->player2bis->club}}
-            @else
-              Club
-            @endif
-          
-          </label>
-        </div>
-        <div class="form-group mb-6">
-          <label type="text" class="form-control
-            block
-            w-full
-            px-3
-            py-1.5
-            text-base
-            font-normal
-            text-gray-700
-            bg-white bg-clip-padding
-            border border-solid border-gray-300
-            rounded
-            transition
-            ease-in-out
-            m-0
-            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="classement" name="classement"
-          >
-
-            @if(!empty($this->player2bis))
-              {{$this->player2bis->classement}}
-            @else
-              Classement
-            @endif
-          
-          </label>
-        </div>
-      </div>
+      @endif
     </div>
-    @endif
+    
     <div class="w-full md:w-1/2 xl:w-1/3 p-6">
     </div>
     <div class="w-full md:w-1/2 xl:w-1/3 p-6">
@@ -657,7 +648,11 @@
       </button>
     </div>
   </form>
-
+<style>
+  .select2-container{
+    width: 100% !important;
+  }
+</style>
 @push('scripts')
   <script>
 
@@ -717,6 +712,7 @@
 
   </script>
 @endpush
+
 
 
 

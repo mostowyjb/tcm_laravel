@@ -14,10 +14,10 @@
         </div>
         <div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-row pb-4 md:pb-0 w-full justify-between md:flex md:flex-row">
-                <div class= " flex-col flex-row justify-self-end md:flex-row md:flex md:flex-row pb-4 md:pb-0 ">
+                <div class= " flex-col flex-row justify-self-end md:flex-row md:flex md:flex-row pb-4 md:pb-0 uppercase">
                     <a href="/" class=" py-2 px-2 text-marine font-semibold {{ Request::is('/') ? ' border-b-4 border-marine ' : '' }}">Accueil</a>
                     <a href="{{ route('tournoi') }}" class="py-2 px-2 text-marine font-semibold hover:text-marine transition duration-300 {{ Request::is('tournoi') ? 'border-b-4 border-marine ' : '' }}">Info Tournoi</a>
-                    <a href="" class="py-2 px-2 text-marine font-semibold hover:text-marine transition duration-300">Contacter-nous</a>
+                    <a href="{{ route('about') }}" class="py-2 px-2 text-marine font-semibold hover:text-marine transition duration-300 {{ Request::is('about') ? 'border-b-4 border-marine ' : '' }}">A Propos</a>
                 </div> 
             </nav>
         </div>
