@@ -14,7 +14,7 @@ class PlayerController extends Controller
         $players = Player::all();
         return view('player.index',['players' => $players]);
     }
-    public function addPlayer(Request $request)
+    public function addPlayer()
     {
         $rules = [
             'lastname' => ['required', 'string', 'max:255'],
@@ -46,4 +46,6 @@ class PlayerController extends Controller
       
         return redirect()->route('player');
     }
+    
+    
 }

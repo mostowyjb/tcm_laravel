@@ -33,15 +33,16 @@ Route::post('custom-login', [Controllers\Auth\CustomAuthController::class, 'cust
 
 Route::middleware('auth')->group(function ($router) {
     Route::group(['prefix' => 'dashboard'], function () use ($router) {
+        $router->get('/player', \App\Http\Livewire\Player::class)->name('player');
         $router->get('/', [Controllers\DashboardController::class, 'show'])->name('dashboard');
         
         $router->get('/match', \App\Http\Livewire\Tournament\MatchesController::class)->name('match');
     
         $router->get('/programmation', \App\Http\Livewire\Tournament\ProgrammationController::class)->name('programmation');
 
-        $router->get('/player', [Controllers\Player\PlayerController::class, 'show'])->name('player');
-        $router->post('/add-player', [Controllers\Player\PlayerController::class, 'addPlayer'])->name('player.addPlayer');
-        $router->get('/delete-player/{id}', [Controllers\Player\PlayerController::class, 'deletePlayer'])->name('player.deletePlayer');
+        
+        //$router->post('/add-player', [Controllers\Player\PlayerController::class, 'addPlayer'])->name('player.addPlayer');
+        //$router->get('/delete-player/{id}', [Controllers\Player\PlayerController::class, 'deletePlayer'])->name('player.deletePlayer');
 
         $router->get('/stats', \App\Http\Livewire\Dashboard\VisitorController::class)->name('visist');
     });

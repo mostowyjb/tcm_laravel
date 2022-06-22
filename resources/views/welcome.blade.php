@@ -40,8 +40,8 @@
                     <a href="#" class="no-underline hover:no-underline">
                         <img src="https://source.unsplash.com/_AjqGGafofE/400x200" class="h-48 w-full rounded-t shadow-lg">
                         <div class="p-6 h-auto md:h-48">
-                            <p class="text-gray-600 text-xs md:text-sm">GETTING STARTED</p>
-                            <div class="font-bold text-xl text-gray-900">Lorem ipsum dolor sit amet.</div>
+                            <p class="text-gray-600 text-xs md:text-sm">Programmation</p>
+                            <div class="font-bold text-xl text-gray-900">Match en live</div>
                             <p class="text-gray-800 font-serif text-base mb-5">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
                             </p>
@@ -56,9 +56,9 @@
             <div class="w-full md:w-1/3 px-2 pb-12">
                 <div class="h-full bg-white rounded overflow-hidden shadow-md hover:shadow-lg relative smooth">
                     <a href="#" class="no-underline hover:no-underline">
-                        <img src="https://source.unsplash.com/_AjqGGafofE/400x200" class="h-48 w-full rounded-t shadow">
+                        <img src="{{secure_asset('img/live.jpg')}}" class="h-48 w-full rounded-t shadow">
                         <div class="p-6 h-auto md:h-48">
-                            <p class="text-gray-600 text-xs md:text-sm">UNDERWATER</p>
+                            <p class="text-gray-600 text-xs md:text-sm">Match en live</p>
                             <div class="font-bold text-xl text-gray-900">Biolumini algae diatomeae ecology.</div>
                             <p class="text-gray-800 font-serif text-base mb-5">
                                 Lorem ipsum dolor sit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
@@ -76,7 +76,7 @@
                     <a href="#" class="no-underline hover:no-underline">
                         <img src="https://source.unsplash.com/DEa8_vxKlEo/400x200" class="h-48 w-full rounded-t shadow">
                         <div class="p-6 h-auto md:h-48">
-                            <p class="text-gray-600 text-xs md:text-sm">FOREST</p>
+                            <p class="text-gray-600 text-xs md:text-sm">Score en direct</p>
                             <div class="font-bold text-xl text-gray-900">What is life but a teardrop in the eye of infinity?</div>
                             <p class="text-gray-800 font-serif text-base mb-5">
                                 Mollis pretium integer eros et dui orci, lectus nec elit sagittis neque. Dignissim ac nullam semper aliquet volutpat, ut scelerisque.
