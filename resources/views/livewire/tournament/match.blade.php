@@ -1,7 +1,7 @@
-<div>
-  <div class="bg-gray-800 pt-3">
-    <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
-        <h1 class="font-bold pl-2">Match</h1>
+<div class="header pb-6 w-full" >
+  <div>
+    <div class="-3xl p-4 text-2xl text-white">
+        <h1 class="font-bold pl-2">Création des Matchs</h1>
     </div>
   </div>
 

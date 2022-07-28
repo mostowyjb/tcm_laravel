@@ -1,11 +1,16 @@
-<div>
-    <div class="bg-white border-transparent rounded-lg shadow-xl">
-        <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
-            <h5 class="font-bold uppercase text-gray-600">Visiteurs Differents</h5>
-        </div>
-        <div class="p-5">
+<div class="header pb-6 w-full" >
+    <div>
+      <div class="-3xl p-4 text-2xl text-white">
+          <h1 class="font-bold pl-2">Visieurs unique</h1>
+      </div>
+    </div>
+    <div class="w-full p-6">
+    <div class="bg-white border-transparent rounded-lg shadow-xl p-4 w-full">
+
+        <div class="">
             <canvas id="chartContainer" class="chartjs" width="undefined" height="undefined"></canvas>
         </div>
+    </div>
     </div>
 
 

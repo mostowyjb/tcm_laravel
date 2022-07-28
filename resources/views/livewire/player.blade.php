@@ -1,16 +1,15 @@
 <div  x-data="{
   updateMode: @entangle('updateMode').defer,
   importModal: @entangle('importModal').defer
-  }"
+  }" class="w-full"
  >
-    <div class="bg-gray-800 pt-3">
-        <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
-            <h1 class="font-bold pl-2">Joueurs</h1>
-        </div>
-        
+  <div>
+    <div class="-3xl p-4 text-2xl text-white">
+        <h1 class="font-bold pl-2">Participants au tournoi</h1>
     </div>
-
-    <div class="flex flex-wrap">
+  </div>
+  <div class="w-full p-6">
+    <div class="flex flex-wrap w-full ">
       
         <!-- FORMULAIRE AJOUR JOUERU -->
         <div class="w-full p-6">
@@ -188,5 +187,5 @@
           </div>
         </div>
     </div>  
-
+  <div>
 </div>
